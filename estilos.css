@@ -1,1 +1,263 @@
 
+/* ==========================================================================
+   Variables y Reset (Mobile-First)
+   ========================================================================== */
+:root {
+  --primary-color: #2e7d32; /* Verde médico principal */
+  --primary-dark: #1b5e20;
+  --secondary-color: #e8f5e9; /* Fondo suave */
+  --text-color: #333333;
+  --light-text: #ffffff;
+  --accent-color: #f57c00; /* Llamadas a la acción */
+  --font-family: 'Nunito', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Tipografía y Utilidades
+   ========================================================================== */
+h1, h2, h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+
+p { margin-bottom: 1rem; }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--light-text);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #e65100;
+  transform: translateY(-2px);
+}
+
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   Navegación (Header y Menú)
+   ========================================================================== */
+header {
+  background-color: var(--light-text);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* Menú Hamburguesa */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Componentes Específicos (Tarjetas, Formularios, Hero)
+   ========================================================================== */
+.hero {
+  background: linear-gradient(rgba(232, 245, 233, 0.9), rgba(232, 245, 233, 0.9)), url('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 5%;
+  text-align: center;
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--light-text);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  border-top: 4px solid var(--primary-color);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: var(--font-family);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+/* Alertas JS */
+.alert {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  display: none;
+}
+.alert.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; display: block; }
+.alert.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  background-color: var(--primary-dark);
+  color: var(--light-text);
+  padding: 2rem 5%;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Media Queries (Desktop)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--light-text);
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media (min-width: 769px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
