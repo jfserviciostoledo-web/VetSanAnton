@@ -6,46 +6,57 @@
   <title>Consejos de Salud | Centro Veterinario San Antón</title>
   <meta name="description" content="Tips y consejos básicos de salud preventiva para mantener a tu perro o gato sano y feliz.">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <header>
     <div class="navbar">
-      <a href="index.html" class="logo">🐾 San Antón</a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <a href="index.html" class="logo">
+        <i class="ph-fill ph-paw-print"></i> San Antón
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <i class="ph ph-list"></i>
+      </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="equipo.html">Nuestro Equipo</a></li>
         <li><a href="consejos.html" class="active">Consejos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="contacto.html" class="btn-nav">Contacto</a></li>
       </ul>
     </div>
   </header>
 
   <main>
     <section class="container">
-      <h1 class="text-center">Blog y Tips de Salud Preventiva</h1>
-      <p class="text-center">Pequeñas acciones diarias marcan una gran diferencia en la calidad de vida de tu mascota.</p>
+      <div class="text-center contact-header">
+        <h1>Blog y Tips de Salud Preventiva</h1>
+        <p class="section-subtitle">Pequeñas acciones diarias marcan una gran diferencia en la calidad de vida de tu mascota.</p>
+      </div>
       
-      <div class="grid" style="margin-top: 2rem;">
+      <div class="grid">
         <article class="card">
-          <h3>🦟 La importancia de protegerlos en primavera</h3>
+          <div class="card-icon"><i class="ph-fill ph-bug-beetle"></i></div>
+          <h3 class="text-center">Protegerlos en primavera</h3>
           <p>Con la llegada del calor, parásitos como pulgas, garrapatas y mosquitos se vuelven más activos. Revisa siempre el collar o la pipeta de tu mascota y asegúrate de que esté al día para evitar enfermedades graves como la Leishmaniosis.</p>
         </article>
         
         <article class="card">
-          <h3>🦷 Cuidado dental: Más que buen aliento</h3>
+          <div class="card-icon"><i class="ph-fill ph-tooth"></i></div>
+          <h3 class="text-center">Cuidado dental</h3>
           <p>El sarro puede provocar problemas en las encías y, a la larga, infecciones en órganos internos. Acostumbra a tu perro o gato al cepillado dental con pastas específicas para animales o utiliza snacks dentales homologados.</p>
         </article>
 
         <article class="card">
-          <h3>💧 Hidratación en gatos</h3>
+          <div class="card-icon"><i class="ph-fill ph-drop"></i></div>
+          <h3 class="text-center">Hidratación en gatos</h3>
           <p>Los gatos domésticos tienden a beber poca agua, lo que puede causar problemas renales. Truco: utiliza fuentes de agua en movimiento o añade comida húmeda (latas) a su dieta diaria para aumentar su ingesta de líquidos.</p>
         </article>
 
         <article class="card">
-          <h3>⚠️ Señales de alerta en casa</h3>
+          <div class="card-icon"><i class="ph-fill ph-warning-circle"></i></div>
+          <h3 class="text-center">Señales de alerta en casa</h3>
           <p>Si notas que tu mascota deja de comer repentinamente, se aísla, tiene cambios bruscos de comportamiento o problemas para hacer sus necesidades, no esperes. Un diagnóstico temprano salva vidas.</p>
         </article>
       </div>
@@ -53,8 +64,13 @@
   </main>
 
   <footer>
-    <p>📍 Calle Ficticia 123, Ciudad | 📞 900 123 456</p>
-    <p>&copy; 2026 Centro Veterinario San Antón. Todos los derechos reservados.</p>
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><i class="ph-fill ph-map-pin"></i> Calle Ficticia 123, Ciudad</p>
+        <p><i class="ph-fill ph-phone"></i> 900 123 456</p>
+      </div>
+      <p class="copyright">&copy; 2026 Centro Veterinario San Antón. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
