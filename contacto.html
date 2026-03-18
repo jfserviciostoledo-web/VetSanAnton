@@ -18,19 +18,21 @@
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <i class="ph ph-list"></i>
       </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="equipo.html">Nuestro Equipo</a></li>
-        <li><a href="consejos.html">Consejos</a></li>
-        <li><a href="contacto.html" class="active btn-nav">Contacto</a></li>
-      </ul>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="equipo.html">Nuestro Equipo</a></li>
+          <li><a href="consejos.html">Consejos</a></li>
+          <li><a href="contacto.html" class="active btn-nav">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main class="container">
-    <div class="contact-header text-center">
-      <h1>Estamos aquí para ayudarte</h1>
+    <div class="text-center" style="margin-bottom: 3rem;">
+      <h1 class="section-title">Estamos aquí para ayudarte</h1>
       <p class="section-subtitle">Pide tu cita, haz tus consultas o ven a visitarnos. Estaremos encantados de recibir a tu familia.</p>
     </div>
 
@@ -38,7 +40,7 @@
       <div class="card">
         <h2>Envíanos un mensaje</h2>
         <div id="formStatus"></div>
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm">
           <div class="form-group">
             <label for="nombre">Tu Nombre *</label>
             <input type="text" id="nombre" placeholder="Ej. Ana García" required>
@@ -59,38 +61,50 @@
         </form>
       </div>
 
-      <div class="card info-card">
-        <h2>Información de la Clínica</h2>
-        <ul class="contact-info-list">
-          <li>
-            <i class="ph-fill ph-phone"></i>
-            <div>
-              <strong>Teléfono:</strong>
-              <p>900 123 456</p>
-            </div>
-          </li>
-          <li>
-            <i class="ph-fill ph-envelope-simple"></i>
-            <div>
-              <strong>Email:</strong>
-              <p>hola@veterinariosananton.es</p>
-            </div>
-          </li>
-          <li>
-            <i class="ph-fill ph-clock"></i>
-            <div>
-              <strong>Horario:</strong>
-              <p>Lunes a Viernes: 09:30 - 20:00<br>Sábados: 10:00 - 14:00</p>
-            </div>
-          </li>
-          <li>
-            <i class="ph-fill ph-map-pin"></i>
-            <div>
-              <strong>Dirección:</strong>
-              <p>Calle Ficticia 123, 28000 Ciudad</p>
-            </div>
-          </li>
-        </ul>
+      <div>
+        <div class="card info-card">
+          <h2>Información de la Clínica</h2>
+          <ul class="contact-info-list">
+            <li>
+              <i class="ph-fill ph-phone"></i>
+              <div>
+                <strong>Teléfono:</strong>
+                <p>900 123 456</p>
+              </div>
+            </li>
+            <li>
+              <i class="ph-fill ph-envelope-simple"></i>
+              <div>
+                <strong>Email:</strong>
+                <p>hola@veterinariosananton.es</p>
+              </div>
+            </li>
+            <li>
+              <i class="ph-fill ph-clock"></i>
+              <div>
+                <strong>Horario:</strong>
+                <p>Lunes a Viernes: 09:30 - 20:00<br>Sábados: 10:00 - 14:00</p>
+              </div>
+            </li>
+            <li>
+              <i class="ph-fill ph-map-pin"></i>
+              <div>
+                <strong>Dirección:</strong>
+                <p>Calle Ficticia 123, 28000 Ciudad</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="map-responsive">
+          <iframe 
+            src="https://maps.google.com/maps?q=Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            title="Ubicación de la clínica">
+          </iframe>
+        </div>
       </div>
     </div>
   </main>
