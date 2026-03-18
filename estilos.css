@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Variables y Reset (Premium Look)
+   Variables, Reset y Multimedia (Mobile-First)
    ========================================================================== */
 :root {
   --primary-color: #115e59; 
@@ -22,6 +22,13 @@
   box-sizing: border-box;
 }
 
+/* Regla estricta para que la multimedia no se desborde */
+img, video, iframe, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   font-family: var(--font-family);
   color: var(--text-main);
@@ -35,24 +42,25 @@ body {
 main { flex: 1; }
 
 /* ==========================================================================
-   Tipografía y Utilidades
+   Tipografía, Layout Flexible y Botones
    ========================================================================== */
 h1, h2, h3 { color: var(--primary-dark); line-height: 1.2; }
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.5rem; }
-h2 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.5rem; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
 h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1rem; }
 
-p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.05rem; }
-
-.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 5rem 0; }
+/* Contenedor flexible usando porcentajes */
+.container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 4rem 0; }
 .text-center { text-align: center; }
 .section-title { margin-bottom: 0.5rem; }
 .section-subtitle { max-width: 600px; margin: 0 auto 3rem auto; font-size: 1.1rem; }
 .w-100 { width: 100%; justify-content: center; }
 
-/* Botones Premium */
+/* Botones accesibles para pantallas táctiles (mínimo 48px alto) */
 .btn {
-  display: inline-flex; align-items: center; gap: 8px; padding: 1rem 2rem;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; 
+  padding: 0.875rem 2rem; min-height: 48px;
   text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem;
   border: none; cursor: pointer; transition: var(--transition);
 }
@@ -60,104 +68,160 @@ p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.05rem; }
 .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6); }
 
 /* ==========================================================================
-   Navegación (Header y Menú)
+   Header y Navegación
    ========================================================================== */
 header {
   background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
   box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000;
 }
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1400px; margin: 0 auto; }
-.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.navbar { 
+  display: flex; 
+  justify-content: space-between; /* Esto empuja logo a izq y nav/hamburguesa a der */
+  align-items: center; 
+  padding: 1rem 4%; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
 .logo i { font-size: 2rem; color: var(--accent-color); }
-.nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
-.nav-links li a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1.05rem; transition: var(--transition); }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 1rem; }
+
+/* Área táctil ampliada para enlaces del menú */
+.nav-links li a { 
+  display: block; padding: 0.75rem 1rem;
+  text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1.05rem; transition: var(--transition); 
+}
 .nav-links li a:hover, .nav-links li a.active { color: var(--primary-color); }
-.btn-nav { background-color: var(--primary-color); color: var(--white) !important; padding: 0.6rem 1.5rem; border-radius: 50px; }
+.btn-nav { background-color: var(--primary-color); color: var(--white) !important; border-radius: 50px; }
 .btn-nav:hover { background-color: var(--primary-dark); }
-.hamburger { display: none; cursor: pointer; background: none; border: none; font-size: 2rem; color: var(--primary-color); }
+
+/* Hamburguesa accesible y alineada a la derecha */
+.hamburger { 
+  display: none; 
+  cursor: pointer; 
+  background: none; 
+  border: none; 
+  font-size: 2.2rem; /* Un pelín más grande para que se vea claro */
+  color: var(--primary-color); 
+  min-width: 48px; 
+  min-height: 48px; 
+  padding: 0; /* Quitamos padding extra para que quede pegado al borde */
+}
 
 /* ==========================================================================
-   Hero Section
+   Layouts con Grid y Flexbox
    ========================================================================== */
 .hero {
   background: linear-gradient(rgba(17, 94, 89, 0.85), rgba(15, 76, 72, 0.85)), 
               url('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80') center/cover no-repeat;
-  padding: 8rem 5%; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 70vh;
+  padding: 6rem 4%; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 60vh;
 }
 .hero-content { max-width: 800px; animation: fadeIn 1s ease-out; }
 .hero h1 { color: var(--white); }
-.hero p { color: #e5e7eb; font-size: 1.25rem; margin-bottom: 2.5rem; }
+.hero p { color: #e5e7eb; font-size: 1.1rem; margin-bottom: 2rem; }
 
-/* ==========================================================================
-   Tarjetas y Grid
-   ========================================================================== */
-.features-section { background-color: var(--white); border-radius: 24px; margin-top: -3rem; position: relative; box-shadow: var(--shadow-sm); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; padding: 0 1rem; }
-.card { background: var(--white); padding: 3rem 2rem; border-radius: 20px; box-shadow: var(--shadow-lg); transition: var(--transition); border: 1px solid #f3f4f6; }
+.features-section { background-color: var(--white); border-radius: 24px; margin-top: -3rem; position: relative; box-shadow: var(--shadow-sm); z-index: 10; }
+
+/* Grid fluido sin medidas fijas */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 0; }
+.card { background: var(--white); padding: 2.5rem 1.5rem; border-radius: 20px; box-shadow: var(--shadow-lg); transition: var(--transition); border: 1px solid #f3f4f6; }
 .card:hover { transform: translateY(-5px); border-color: var(--secondary-color); }
+
+/* Iconos usando rem en lugar de px */
 .card-icon {
-  width: 70px; height: 70px; background-color: var(--secondary-color); color: var(--primary-color);
+  width: 4.5rem; height: 4.5rem; background-color: var(--secondary-color); color: var(--primary-color);
   border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
   margin: 0 auto 1.5rem auto; transition: var(--transition);
 }
 .card:hover .card-icon { background-color: var(--primary-color); color: var(--white); }
 
 /* ==========================================================================
-   Sección Contacto (Formulario y Layout)
+   Contacto, Formularios y Mapa
    ========================================================================== */
-.contact-header { margin-bottom: 2rem; }
-.contact-wrapper {
-  display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start;
-}
+.contact-wrapper { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
 .form-group { margin-bottom: 1.5rem; text-align: left; }
-.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--primary-dark); }
 .form-group input, .form-group textarea {
   width: 100%; padding: 1rem; border: 1px solid #d1d5db; border-radius: 12px;
-  font-family: var(--font-family); font-size: 1rem; color: var(--text-main); transition: var(--transition);
-  background-color: #f9fafb;
+  font-family: var(--font-family); font-size: 1rem; color: var(--text-main);
+  background-color: #f9fafb; transition: var(--transition);
 }
-.form-group input:focus, .form-group textarea:focus {
-  outline: none; border-color: var(--primary-color); background-color: var(--white);
-  box-shadow: 0 0 0 4px rgba(17, 94, 89, 0.1);
-}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); background-color: var(--white); box-shadow: 0 0 0 4px rgba(17, 94, 89, 0.1); }
 .contact-info-list { list-style: none; margin-top: 2rem; }
 .contact-info-list li { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
-.contact-info-list i { font-size: 1.8rem; color: var(--primary-color); background: var(--secondary-color); padding: 10px; border-radius: 12px; }
-.contact-info-list strong { display: block; color: var(--primary-dark); margin-bottom: 0.2rem; }
-.contact-info-list p { margin: 0; font-size: 1rem; }
+.contact-info-list i { font-size: 1.8rem; color: var(--primary-color); background: var(--secondary-color); padding: 0.6rem; border-radius: 12px; }
 
-/* Alertas de JavaScript */
-.alert { padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; font-weight: 600; display: none; }
-.alert.success { background-color: #d1fae5; color: #065f46; border: 1px solid #34d399; display: block; }
-.alert.error { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; display: block; }
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-footer { background-color: var(--primary-dark); color: #d1d5db; padding: 3rem 5%; margin-top: auto; }
-.footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-.footer-info { display: flex; gap: 2rem; font-size: 1.1rem; }
-.footer-info i { color: var(--accent-color); margin-right: 5px; }
-.copyright { font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; width: 100%; text-align: center; }
-
-/* ==========================================================================
-   Media Queries (Responsive)
-   ========================================================================== */
-@media (max-width: 900px) {
-  .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+/* Contenedor fluido para el iframe del mapa */
+.map-responsive {
+  width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); margin-top: 2rem;
 }
-@media (max-width: 768px) {
-  .hamburger { display: block; }
+.map-responsive iframe { width: 100%; height: 100%; }
+
+/* ==========================================================================
+   Footer (Más compacto)
+   ========================================================================== */
+footer { 
+  background-color: var(--primary-dark); 
+  color: #d1d5db; 
+  padding: 1.5rem 4%; /* Padding reducido drásticamente */
+  margin-top: auto; 
+}
+.footer-content { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1rem; /* Menos espacio entre elementos */
+}
+.footer-info { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.5rem; /* Menos espacio entre línea y línea en móvil */
+  text-align: center; 
+  font-size: 0.95rem; /* Fuente un poco más pequeña */
+}
+.footer-info i { color: var(--accent-color); margin-right: 5px; }
+.copyright { 
+  font-size: 0.8rem; 
+  border-top: 1px solid rgba(255,255,255,0.1); 
+  padding-top: 1rem; 
+  width: 100%; 
+  text-align: center; 
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Resoluciones y Dispositivos)
+   ========================================================================== */
+
+/* Móvil (Hasta 767px) */
+@media (max-width: 767px) {
+  .hamburger { 
+    display: block; 
+    margin-left: auto; /* Fuerza al icono a irse a la derecha del todo */
+  }
   .nav-links {
     position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white);
     flex-direction: column; padding: 0; max-height: 0; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
   .nav-links.active { max-height: 400px; padding: 1rem 0; }
-  .nav-links li { width: 100%; text-align: center; padding: 1rem 0; }
+  .nav-links li { width: 100%; text-align: center; }
   .btn-nav { display: inline-block; margin-top: 0.5rem; }
-  .hero { padding: 6rem 5%; min-height: 60vh; }
-  .footer-info { flex-direction: column; gap: 0.5rem; text-align: center; }
   .features-section { margin-top: 0; border-radius: 0; }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero { min-height: 50vh; }
+  .footer-info { flex-direction: row; gap: 2rem; }
+  .grid { gap: 1.5rem; }
+}
+
+/* Escritorio (1025px en adelante) */
+@media (min-width: 1025px) {
+  .hero { min-height: 75vh; }
+  .footer-info { flex-direction: row; gap: 3rem; }
+  .contact-wrapper { grid-template-columns: 1.5fr 1fr; gap: 4rem; }
 }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
