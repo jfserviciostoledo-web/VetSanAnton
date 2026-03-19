@@ -76,7 +76,7 @@ header {
 }
 .navbar { 
   display: flex; 
-  justify-content: space-between; /* Esto empuja logo a izq y nav/hamburguesa a der */
+  justify-content: space-between; 
   align-items: center; 
   padding: 1rem 4%; 
   max-width: 1400px; 
@@ -101,11 +101,11 @@ header {
   cursor: pointer; 
   background: none; 
   border: none; 
-  font-size: 2.2rem; /* Un pelín más grande para que se vea claro */
+  font-size: 2.2rem; 
   color: var(--primary-color); 
   min-width: 48px; 
   min-height: 48px; 
-  padding: 0; /* Quitamos padding extra para que quede pegado al borde */
+  padding: 0; 
 }
 
 /* ==========================================================================
@@ -122,7 +122,7 @@ header {
 
 .features-section { background-color: var(--white); border-radius: 24px; margin-top: -3rem; position: relative; box-shadow: var(--shadow-sm); z-index: 10; }
 
-/* Grid fluido sin medidas fijas */
+/* Grid fluido estándar sin medidas fijas */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 0; }
 .card { background: var(--white); padding: 2.5rem 1.5rem; border-radius: 20px; box-shadow: var(--shadow-lg); transition: var(--transition); border: 1px solid #f3f4f6; }
 .card:hover { transform: translateY(-5px); border-color: var(--secondary-color); }
@@ -158,12 +158,12 @@ header {
 .map-responsive iframe { width: 100%; height: 100%; }
 
 /* ==========================================================================
-   Footer (Más compacto)
+   Footer (Compacto)
    ========================================================================== */
 footer { 
   background-color: var(--primary-dark); 
   color: #d1d5db; 
-  padding: 1.5rem 4%; /* Padding reducido drásticamente */
+  padding: 1.5rem 4%; 
   margin-top: auto; 
 }
 .footer-content { 
@@ -172,14 +172,14 @@ footer {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
-  gap: 1rem; /* Menos espacio entre elementos */
+  gap: 1rem; 
 }
 .footer-info { 
   display: flex; 
   flex-direction: column; 
-  gap: 0.5rem; /* Menos espacio entre línea y línea en móvil */
+  gap: 0.5rem; 
   text-align: center; 
-  font-size: 0.95rem; /* Fuente un poco más pequeña */
+  font-size: 0.95rem; 
 }
 .footer-info i { color: var(--accent-color); margin-right: 5px; }
 .copyright { 
@@ -198,7 +198,7 @@ footer {
 @media (max-width: 767px) {
   .hamburger { 
     display: block; 
-    margin-left: auto; /* Fuerza al icono a irse a la derecha del todo */
+    margin-left: auto; 
   }
   .nav-links {
     position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white);
@@ -222,6 +222,16 @@ footer {
   .hero { min-height: 75vh; }
   .footer-info { flex-direction: row; gap: 3rem; }
   .contact-wrapper { grid-template-columns: 1.5fr 1fr; gap: 4rem; }
+  
+  /* Clase específica para forzar 4 columnas en la página de Servicios */
+  .grid-4 { 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem; /* Ajustamos ligeramente el gap para que respiren bien las 4 tarjetas */
+  }
+  /* Ajustamos un poco el padding interno de las tarjetas cuando hay 4 columnas para que el texto no quede muy apretado */
+  .grid-4 .card {
+    padding: 2rem 1rem;
+  }
 }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
