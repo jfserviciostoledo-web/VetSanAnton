@@ -78,12 +78,41 @@ header {
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
-  padding: 1rem 4%; 
+  padding: 1rem 1.5rem; /* Padding horizontal reducido drásticamente para mover logo a la izquierda */
   max-width: 1400px; 
   margin: 0 auto; 
 }
-.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-.logo i { font-size: 2rem; color: var(--accent-color); }
+
+/* Logotipo Elaborado y Estructurado */
+.logo { 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.75rem; 
+}
+.logo-icon { 
+  font-size: 2.5rem; /* Icono un poco más grande y prominent */
+  color: var(--accent-color); 
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1; /* Unificamos las dos líneas de texto */
+}
+.logo-main {
+  font-size: 1.75rem; /* Título principal grande y contundente */
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+.logo-sub {
+  font-size: 0.8rem; /* Subtítulo pequeño, profesional y en mayúsculas */
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; /* Ligero espaciado entre letras (tracking) para un acabado premium */
+  margin-top: -0.1rem;
+}
+
 .nav-links { list-style: none; display: flex; align-items: center; gap: 1rem; }
 
 /* Área táctil ampliada para enlaces del menú */
@@ -135,12 +164,60 @@ header {
 }
 .card:hover .card-icon { background-color: var(--primary-color); color: var(--white); }
 
+/* Tarjetas de Blog (Para la sección Consejos con Fotos) */
+.card-blog {
+  padding: 0; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover; 
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.card-body {
+  padding: 0 1.5rem 2rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-icon-small {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: -1.75rem auto 1rem auto; 
+  position: relative;
+  border: 4px solid var(--white); 
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.card-blog:hover .card-icon-small {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
 /* ==========================================================================
    Contacto, Formularios y Mapa
    ========================================================================== */
-.contact-wrapper { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
+.contact-header { margin-bottom: 2rem; }
+.contact-wrapper {
+  display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start;
+}
 .form-group { margin-bottom: 1.5rem; text-align: left; }
-.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--primary-dark); }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
 .form-group input, .form-group textarea {
   width: 100%; padding: 1rem; border: 1px solid #d1d5db; border-radius: 12px;
   font-family: var(--font-family); font-size: 1rem; color: var(--text-main);
@@ -150,12 +227,19 @@ header {
 .contact-info-list { list-style: none; margin-top: 2rem; }
 .contact-info-list li { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
 .contact-info-list i { font-size: 1.8rem; color: var(--primary-color); background: var(--secondary-color); padding: 0.6rem; border-radius: 12px; }
+.contact-info-list strong { display: block; color: var(--primary-dark); margin-bottom: 0.2rem; }
+.contact-info-list p { margin: 0; font-size: 1rem; }
 
 /* Contenedor fluido para el iframe del mapa */
 .map-responsive {
   width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); margin-top: 2rem;
 }
 .map-responsive iframe { width: 100%; height: 100%; }
+
+/* Alertas de JavaScript */
+.alert { padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; font-weight: 600; display: none; }
+.alert.success { background-color: #d1fae5; color: #065f46; border: 1px solid #34d399; display: block; }
+.alert.error { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; display: block; }
 
 /* ==========================================================================
    Footer (Compacto)
@@ -226,9 +310,8 @@ footer {
   /* Clase específica para forzar 4 columnas en la página de Servicios */
   .grid-4 { 
     grid-template-columns: repeat(4, 1fr); 
-    gap: 1.5rem; /* Ajustamos ligeramente el gap para que respiren bien las 4 tarjetas */
+    gap: 1.5rem;
   }
-  /* Ajustamos un poco el padding interno de las tarjetas cuando hay 4 columnas para que el texto no quede muy apretado */
   .grid-4 .card {
     padding: 2rem 1rem;
   }
