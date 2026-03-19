@@ -13,12 +13,16 @@
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">
-        <i class="ph-fill ph-paw-print"></i> San Antón
+        <i class="ph-fill ph-paw-print logo-icon"></i>
+        <div class="logo-text">
+          <span class="logo-main">San Antón</span>
+          <span class="logo-sub">CENTRO VETERINARIO</span>
+        </div>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <i class="ph ph-list"></i>
       </button>
-      <nav>
+      <nav aria-label="Navegación principal">
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="servicios.html">Servicios</a></li>
@@ -32,34 +36,64 @@
 
   <main>
     <section class="container">
-      <div class="text-center">
+      <div class="text-center" style="margin-bottom: 3rem;">
         <h1 class="section-title">Blog y Tips de Salud Preventiva</h1>
-        <p class="section-subtitle">Pequeñas acciones diarias marcan una gran diferencia en la calidad de vida de tu mascota.</p>
+        <p class="section-subtitle">Pequeñas acciones diarias marcan una gran diferencia en la calidad de vida de tu mascota. Descubre cómo cuidarlos mejor.</p>
       </div>
       
-      <div class="grid" style="margin-top: 2rem;">
-        <article class="card">
-          <div class="card-icon"><i class="ph-fill ph-bug-beetle"></i></div>
-          <h3 class="text-center">Protegerlos en primavera</h3>
-          <p>Con la llegada del calor, parásitos como pulgas, garrapatas y mosquitos se vuelven más activos. Revisa siempre el collar o la pipeta de tu mascota y asegúrate de que esté al día para evitar enfermedades graves como la Leishmaniosis.</p>
+      <div class="grid">
+        <article class="card card-blog">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80" alt="Perro feliz en el campo" class="card-img-top">
+          <div class="card-body">
+            <div class="card-icon-small"><i class="ph-fill ph-bug-beetle"></i></div>
+            <h3 class="text-center">Protegerlos en primavera</h3>
+            <p class="text-center">Con la llegada del calor, parásitos como pulgas y mosquitos se vuelven activos. Revisa siempre el collar o la pipeta para evitar enfermedades graves.</p>
+          </div>
         </article>
         
-        <article class="card">
-          <div class="card-icon"><i class="ph-fill ph-tooth"></i></div>
-          <h3 class="text-center">Cuidado dental</h3>
-          <p>El sarro puede provocar problemas en las encías y, a la larga, infecciones en órganos internos. Acostumbra a tu perro o gato al cepillado dental con pastas específicas para animales o utiliza snacks dentales homologados.</p>
+        <article class="card card-blog">
+          <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80" alt="Perro feliz sonriendo y mostrando los dientes" class="card-img-top">
+          <div class="card-body">
+            <div class="card-icon-small"><i class="ph-fill ph-tooth"></i></div>
+            <h3 class="text-center">Cuidado dental</h3>
+            <p class="text-center">El sarro provoca problemas en las encías y, a la larga, infecciones. Acostumbra a tu mascota al cepillado con pastas específicas o usa snacks dentales.</p>
+          </div>
         </article>
 
-        <article class="card">
-          <div class="card-icon"><i class="ph-fill ph-drop"></i></div>
-          <h3 class="text-center">Hidratación en gatos</h3>
-          <p>Los gatos domésticos tienden a beber poca agua, lo que puede causar problemas renales. Truco: utiliza fuentes de agua en movimiento o añade comida húmeda a su dieta diaria.</p>
+        <article class="card card-blog">
+          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80" alt="Gato bebiendo agua" class="card-img-top">
+          <div class="card-body">
+            <div class="card-icon-small"><i class="ph-fill ph-drop"></i></div>
+            <h3 class="text-center">Hidratación en gatos</h3>
+            <p class="text-center">Los gatos domésticos tienden a beber poca agua, lo que causa problemas renales. Utiliza fuentes de agua en movimiento o añade comida húmeda a su dieta.</p>
+          </div>
         </article>
 
-        <article class="card">
-          <div class="card-icon"><i class="ph-fill ph-warning-circle"></i></div>
-          <h3 class="text-center">Señales de alerta en casa</h3>
-          <p>Si notas que tu mascota deja de comer repentinamente, se aísla, tiene cambios bruscos de comportamiento o problemas para hacer sus necesidades, no esperes. Un diagnóstico temprano salva vidas.</p>
+        <article class="card card-blog">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80" alt="Veterinaria acariciando un perro" class="card-img-top">
+          <div class="card-body">
+            <div class="card-icon-small"><i class="ph-fill ph-warning-circle"></i></div>
+            <h3 class="text-center">Señales de alerta</h3>
+            <p class="text-center">Si notas que deja de comer, se aísla, tiene cambios bruscos de comportamiento o problemas para orinar, no esperes. Un diagnóstico temprano salva vidas.</p>
+          </div>
+        </article>
+
+        <article class="card card-blog">
+          <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&q=80" alt="Perro mayor descansando" class="card-img-top">
+          <div class="card-body">
+            <div class="card-icon-small"><i class="ph-fill ph-heart-beat"></i></div>
+            <h3 class="text-center">Cuidados Senior</h3>
+            <p class="text-center">A partir de los 7 años, sus necesidades cambian. Una dieta adaptada para proteger sus articulaciones y chequeos geriátricos anuales son fundamentales.</p>
+          </div>
+        </article>
+
+        <article class="card card-blog">
+          <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&q=80" alt="Perro jugando con su dueño" class="card-img-top">
+          <div class="card-body">
+            <div class="card-icon-small"><i class="ph-fill ph-puzzle-piece"></i></div>
+            <h3 class="text-center">Estimulación mental</h3>
+            <p class="text-center">El cansancio físico no lo es todo. Enséñales trucos nuevos, usa alfombras olfativas o juguetes interactivos para evitar la ansiedad y mantener su mente ágil.</p>
+          </div>
         </article>
       </div>
     </section>
@@ -71,7 +105,7 @@
         <p><i class="ph-fill ph-map-pin"></i> Calle Ficticia 123, Ciudad</p>
         <p><i class="ph-fill ph-phone"></i> 900 123 456</p>
       </div>
-      <p class="copyright">&copy; 2026 Centro Veterinario San Antón. Todos los derechos reservados.</p>
+      <p class="copyright">© 2026 Centro Veterinario San Antón. Todos los derechos reservados.</p>
     </div>
   </footer>
 
