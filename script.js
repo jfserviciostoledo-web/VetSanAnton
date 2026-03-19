@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isExpanded = navLinks.classList.contains('active');
       hamburger.setAttribute('aria-expanded', isExpanded);
       
+      // Cambiar el icono al abrir/cerrar
       if(isExpanded) {
         hamburger.innerHTML = '<i class="ph ph-x"></i>';
       } else {
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 2. Validación de Formulario de Contacto ---
+  // --- 2. Validación de Formulario de Contacto (Unificada) ---
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
