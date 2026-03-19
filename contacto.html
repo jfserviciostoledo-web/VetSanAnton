@@ -13,12 +13,16 @@
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">
-        <i class="ph-fill ph-paw-print"></i> San Antón
+        <i class="ph-fill ph-paw-print logo-icon"></i>
+        <div class="logo-text">
+          <span class="logo-main">San Antón</span>
+          <span class="logo-sub">CENTRO VETERINARIO</span>
+        </div>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <i class="ph ph-list"></i>
       </button>
-      <nav>
+      <nav aria-label="Navegación principal">
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="servicios.html">Servicios</a></li>
@@ -31,8 +35,8 @@
   </header>
 
   <main class="container">
-    <div class="text-center" style="margin-bottom: 3rem;">
-      <h1 class="section-title">Estamos aquí para ayudarte</h1>
+    <div class="contact-header text-center" style="margin-bottom: 3rem;">
+      <h1>Estamos aquí para ayudarte</h1>
       <p class="section-subtitle">Pide tu cita, haz tus consultas o ven a visitarnos. Estaremos encantados de recibir a tu familia.</p>
     </div>
 
@@ -40,7 +44,7 @@
       <div class="card">
         <h2>Envíanos un mensaje</h2>
         <div id="formStatus"></div>
-        <form id="contactForm">
+        <form id="contactForm" class="contact-form">
           <div class="form-group">
             <label for="nombre">Tu Nombre *</label>
             <input type="text" id="nombre" placeholder="Ej. Ana García" required>
@@ -98,7 +102,7 @@
         
         <div class="map-responsive">
           <iframe 
-            src="https://maps.google.com/maps?q=Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            src="https://www.google.com/maps/embed" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy"
@@ -115,7 +119,7 @@
         <p><i class="ph-fill ph-map-pin"></i> Calle Ficticia 123, Ciudad</p>
         <p><i class="ph-fill ph-phone"></i> 900 123 456</p>
       </div>
-      <p class="copyright">&copy; 2026 Centro Veterinario San Antón. Todos los derechos reservados.</p>
+      <p class="copyright">© 2026 Centro Veterinario San Antón. Todos los derechos reservados.</p>
     </div>
   </footer>
 
