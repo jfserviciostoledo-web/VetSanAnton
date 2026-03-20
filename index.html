@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <header>
+  <header class="main-header">
     <div class="navbar">
       <a href="index.html" class="logo">
         <i class="ph-fill ph-paw-print logo-icon"></i>
@@ -35,17 +35,19 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
-        <h1>Tu familia peluda en las mejores manos</h1>
+        <h1 id="hero-title">Tu familia peluda en las mejores manos</h1>
         <p>Ofrecemos atención veterinaria de alta calidad centrada en la prevención, el diagnóstico temprano y el cuidado responsable de tu mascota.</p>
         <a href="contacto.html" class="btn btn-primary">Pedir Cita Ahora <i class="ph-bold ph-arrow-right"></i></a>
       </div>
     </section>
 
-    <section class="container features-section">
-      <h2 class="text-center section-title">¿Por qué elegirnos?</h2>
-      <p class="text-center section-subtitle">Cuidamos de los tuyos con la máxima dedicación y la mejor tecnología.</p>
+    <section id="ventajas-clinica" class="container features-section section-padding">
+      <header class="section-header">
+        <h2>¿Por qué elegirnos?</h2>
+        <p>Cuidamos de los tuyos con la máxima dedicación y la mejor tecnología.</p>
+      </header>
       
       <div class="grid">
         <article class="card text-center">
