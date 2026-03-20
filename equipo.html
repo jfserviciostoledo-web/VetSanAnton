@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <header>
+  <header class="main-header">
     <div class="navbar">
       <a href="index.html" class="logo">
         <i class="ph-fill ph-paw-print logo-icon"></i>
@@ -35,17 +35,19 @@
   </header>
 
   <main>
-    <section class="container">
-      <div class="text-center">
-        <h1 class="section-title">Conoce a la familia San Antón</h1>
-      </div>
+    <section id="historia-clinica" class="container section-padding" style="padding-bottom: 0;">
+      <header class="section-header">
+        <h1>Conoce a la familia San Antón</h1>
+      </header>
       
-      <article class="card" style="margin-top: 2rem; margin-bottom: 3rem; border-top: 4px solid var(--primary-color);">
+      <article class="card" style="border-top: 4px solid var(--primary-color);">
         <h2>Nuestra Historia</h2>
         <p>Abrimos nuestras puertas en <strong>2016</strong> con una premisa muy clara: tratar a cada animal que cruza nuestra puerta como si fuera nuestro. Somos un equipo de veterinarios titulados apasionados por los animales, especializados en perros, gatos y pequeños animales domésticos.</p>
         <p>Nuestro objetivo diario es daros tranquilidad. Sabemos que visitar al veterinario puede generar estrés, por eso fomentamos un ambiente relajado y transparente, donde siempre entenderás qué le pasa a tu compañero y cómo podemos ayudarle.</p>
       </article>
+    </section>
 
+    <section id="filosofia-valores" class="container section-padding">
       <div class="grid">
         <article class="card text-center">
           <div class="card-icon"><i class="ph-fill ph-target"></i></div>
@@ -57,13 +59,13 @@
           <div class="card-icon"><i class="ph-fill ph-eye"></i></div>
           <h3>Nuestra Visión</h3>
           <p>Ser la clínica de referencia en nuestro barrio, destacando por la profesionalidad médica combinada con el trato más humano y cercano posible.</p>
-        </div>
+        </article>
         
         <article class="card text-center">
           <div class="card-icon"><i class="ph-fill ph-star"></i></div>
           <h3>Nuestros Valores</h3>
           <p>Nos mueve el <strong>bienestar animal</strong>, la <strong>confianza mutua</strong>, la <strong>transparencia</strong> total en nuestros diagnósticos y el compromiso con nuestra <strong>formación continua</strong>.</p>
-        </div>
+        </article>
       </div>
     </section>
   </main>
