@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. Menú Móvil (Hamburger) ---
+  // 1. Menú Móvil
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
 
@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('active');
       const isExpanded = navLinks.classList.contains('active');
       hamburger.setAttribute('aria-expanded', isExpanded);
-      
-      // Cambiar el icono al abrir/cerrar
       if(isExpanded) {
         hamburger.innerHTML = '<i class="ph ph-x"></i>';
       } else {
@@ -18,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 2. Validación de Formulario de Contacto (Unificada) ---
+  // 2. Validación de Formulario de Contacto (con RGPD)
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
@@ -28,11 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
       const mensaje = document.getElementById('mensaje').value.trim();
+      const rgpd = document.getElementById('rgpd').checked;
 
       if (!nombre || !email || !mensaje) {
         mostrarAlerta('Por favor, completa todos los campos obligatorios.', 'error');
         return;
       }
+      
+      if (!rgpd) {
+        mostrarAlerta('Debes aceptar la política de privacidad para enviar el mensaje.', 'error');
+        return;
+      }
+
       mostrarAlerta('¡Gracias por contactarnos! Hemos recibido tu mensaje.', 'success');
       contactForm.reset();
     });
